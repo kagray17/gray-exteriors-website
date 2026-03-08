@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gray Exteriors | Roofing, Siding, Remodeling & More</title>
+  <meta name="description" content="Gray Exteriors — licensed and insured contractor serving Tippecanoe County. Expert roofing, siding, gutters, windows, doors, and interior & exterior remodeling. Free estimates." />
+  <meta property="og:title" content="Gray Exteriors | Roofing, Siding, Remodeling & More" />
+  <meta property="og:description" content="Licensed and insured contractor serving Tippecanoe County. Expert roofing, siding, gutters, and remodeling. Free estimates — call (765) 430-5731." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/Gray Exteriors Logo.png" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --steel: #0d0f12;
+      --steel-mid: #141618;
+      --steel-light: #1e2124;
+      --accent: #2B7EC1;
+      --accent-dark: #1f6099;
+      --gray-brand: #808080;
+      --off-white: #f0f2f5;
+      --text-light: #9aa0aa;
+      --white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--steel);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+      background: rgba(13,15,18,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--accent);
+    }
+    .nav-logo {
+      display: flex; align-items: center;
+      text-decoration: none;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .nav-logo img { height: 36px; }
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-light);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent); color: var(--steel) !important;
+      padding: 0.5rem 1.2rem; font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent-dark) !important; color: var(--white) !important; }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .nav-call-btn {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--accent); color: var(--white);
+      padding: 0.5rem 1.1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem; font-weight: 700; letter-spacing: 0.06em;
+      text-decoration: none; white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .nav-call-btn:hover { background: var(--accent-dark); }
+    .nav-call-btn span { display: inline; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 26px; height: 2px; background: var(--white); display: block; transition: all 0.3s; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 70px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(13,15,18,0.97) 0%, rgba(13,15,18,0.75) 60%, rgba(43,126,193,0.15) 100%),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.01) 40px,
+          rgba(255,255,255,0.01) 80px
+        );
+      background-color: #060708;
+    }
+    .hero-pattern {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(43,126,193,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(43,126,193,0.07) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 5%; max-width: 900px;
+      animation: heroIn 0.9s ease both;
+    }
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.35rem 1rem; margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 7.5rem);
+      font-weight: 900; line-height: 0.92;
+      text-transform: uppercase; letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .line2 { color: var(--accent); display: block; }
+    .hero-sub {
+      font-size: 1.15rem; font-weight: 300; color: var(--text-light);
+      max-width: 520px; line-height: 1.7; margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent); color: var(--steel);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.3); color: var(--white);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .hero-stats {
+      position: absolute; bottom: 3rem; left: 5%; right: 5%;
+      display: flex; gap: 3rem; z-index: 2;
+      animation: heroIn 0.9s 0.3s ease both;
+    }
+    .stat { border-left: 3px solid var(--accent); padding-left: 1rem; }
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.2rem; font-weight: 900; color: var(--white);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem; font-weight: 500; color: var(--text-light);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem;
+    }
+    .hero-accent-bar {
+      position: absolute; right: 0; top: 20%; bottom: 20%;
+      width: 4px; background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 6rem 5%; }
+    .section-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.75rem; display: block;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900;
+      text-transform: uppercase; line-height: 1; margin-bottom: 1.5rem;
+    }
+    .section-sub {
+      font-size: 1.05rem; font-weight: 300; color: var(--text-light);
+      max-width: 600px; line-height: 1.7; margin-bottom: 3rem;
+    }
+    .accent-line {
+      width: 60px; height: 3px; background: var(--accent); margin-bottom: 2rem;
+    }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--steel-mid); }
+    .services-intro { max-width: 700px; margin-bottom: 4rem; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+    .service-card {
+      background: var(--steel-mid);
+      padding: 2.5rem;
+      transition: background 0.3s;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--accent);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { background: var(--steel-light); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      font-size: 2.2rem; margin-bottom: 1.2rem; display: block;
+    }
+    .service-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.03em; margin-bottom: 0.75rem;
+      color: var(--white);
+    }
+    .service-desc {
+      font-size: 0.92rem; color: var(--text-light); line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+    .service-items {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+    }
+    .service-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(43,126,193,0.12); color: var(--accent);
+      padding: 0.25rem 0.65rem;
+    }
+
+    /* ─── WHY US ─── */
+    #why { background: var(--steel); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .why-features { display: flex; flex-direction: column; gap: 2rem; }
+    .why-feature { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .why-feature-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 3rem; font-weight: 900; color: rgba(43,126,193,0.25);
+      line-height: 1; flex-shrink: 0; width: 50px;
+    }
+    .why-feature-body {}
+    .why-feature-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.04em; margin-bottom: 0.4rem;
+    }
+    .why-feature-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.65; }
+    .why-visual {
+      background: var(--steel-mid);
+      padding: 3rem;
+      position: relative;
+    }
+    .why-visual::before {
+      content: '';
+      position: absolute; top: -3px; left: -3px; right: 3px; bottom: 3px;
+      border: 3px solid var(--accent);
+      z-index: -1;
+    }
+    .why-quote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.7rem; font-weight: 700; line-height: 1.3;
+      margin-bottom: 2rem;
+    }
+    .why-quote span { color: var(--accent); }
+    .why-services-list {
+      list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+    }
+    .why-services-list li {
+      font-size: 0.88rem; color: var(--text-light);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .why-services-list li::before {
+      content: '▸'; color: var(--accent); font-size: 0.7rem;
+    }
+
+    /* ─── RESTORATION BANNER ─── */
+    #restoration {
+      background: var(--accent);
+      padding: 4rem 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .restore-text {}
+    .restore-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.6);
+      margin-bottom: 0.5rem;
+    }
+    .restore-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900;
+      text-transform: uppercase; color: var(--white); line-height: 1;
+    }
+    .restore-desc {
+      font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 480px;
+      line-height: 1.6; margin-top: 0.75rem;
+    }
+    .restore-types { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+    .restore-chip {
+      background: rgba(255,255,255,0.15); color: var(--white);
+      padding: 0.4rem 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .restore-cta {
+      background: var(--white); color: var(--accent);
+      padding: 1rem 2.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .restore-cta:hover { background: var(--steel); color: var(--white); }
+
+    /* ─── GALLERY ─── */
+    #gallery { background: var(--steel-mid); }
+    .gallery-filters {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: transparent; color: var(--text-light);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.5rem 1.2rem; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active {
+      background: var(--accent); color: var(--white);
+      border-color: var(--accent);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      grid-auto-rows: 200px;
+    }
+    .gallery-item {
+      background: var(--steel-light);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s, opacity 0.3s;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block; transition: transform 0.4s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item.featured { grid-column: span 2; grid-row: span 2; }
+    .gallery-item.hidden { display: none; }
+    .gallery-item-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
+      padding: 1.5rem 1rem 0.75rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--white);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-item-label { opacity: 1; }
+    .gallery-placeholder-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-light); text-align: center;
+      padding: 1rem;
+    }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: rgba(43,126,193,0.05);
+      border: 1px dashed rgba(43,126,193,0.3);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gallery-note {
+      text-align: center; margin-top: 2rem;
+      font-size: 0.9rem; color: var(--text-light);
+    }
+    .gallery-note strong { color: var(--accent); }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials { background: var(--steel); }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .testimonial {
+      background: var(--steel-mid); padding: 2rem;
+      border-left: 3px solid var(--accent);
+      transition: transform 0.2s;
+    }
+    .testimonial:hover { transform: translateY(-4px); }
+    .stars { color: var(--accent); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testimonial-text {
+      font-size: 0.95rem; color: var(--off-white); line-height: 1.7;
+      font-style: italic; margin-bottom: 1.5rem;
+    }
+    .testimonial-author {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .testimonial-role { font-size: 0.8rem; color: var(--text-light); margin-top: 0.2rem; }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--steel-mid); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+    .contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .contact-icon {
+      width: 46px; height: 46px; background: rgba(43,126,193,0.1);
+      border: 1px solid rgba(43,126,193,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contact-item-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;
+    }
+    .contact-item-value { font-size: 1rem; color: var(--white); font-weight: 500; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-field label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      background: var(--steel); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white); padding: 0.75rem 1rem;
+      font-family: 'Barlow', sans-serif; font-size: 0.95rem;
+      outline: none; transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus { border-color: var(--accent); }
+    .form-field textarea { resize: vertical; min-height: 110px; }
+    .form-field select option { background: var(--steel); }
+    .form-submit {
+      background: var(--accent); color: var(--white);
+      padding: 1rem 2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.2s; align-self: flex-start;
+    }
+    .form-submit:hover { background: var(--accent-dark); transform: translateY(-2px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #060708;
+      padding: 3rem 5% 2rem;
+    }
+    .footer-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;
+      padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand { max-width: 300px; }
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem; font-weight: 900; letter-spacing: 0.04em;
+      margin-bottom: 0.75rem; color: var(--white);
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-tagline { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+    .footer-links-group {}
+    .footer-links-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-links a {
+      font-size: 0.88rem; color: var(--text-light); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--text-light); }
+    .footer-license {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: var(--steel); padding: 1.5rem 5%; gap: 1.2rem; border-bottom: 2px solid var(--accent); }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-visual { display: none; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+      .gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { flex-direction: column; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 4rem 5%; }
+      .hero-title { line-height: 0.95; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:first-child { grid-column: span 1; }
+      /* On small screens, hide the number text — show icon-only call button */
+      .nav-call-btn span { display: none; }
+      .nav-call-btn { padding: 0.5rem 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">
+    <img src="images/Gray Exteriors Logo.png" alt="Gray Exteriors" />
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:7654305731" class="nav-call-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      <span>(765) 430-5731</span>
+    </a>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-accent-bar"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Licensed & Insured Contractor</span>
+    <h1 class="hero-title">
+      Built to<br>
+      <span class="line2">Last.</span>
+    </h1>
+    <p class="hero-sub">Gray Exteriors delivers expert roofing, siding & gutters. Complete interior and exterior remodeling — every job done right the first time.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Licensed & Insured</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Emergency Response</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Free</div>
+      <div class="stat-label">Estimates</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-intro">
+    <span class="section-tag">What We Do</span>
+    <h2 class="section-title">Full-Service<br>Exterior & Interior</h2>
+    <div class="accent-line"></div>
+    <p class="section-sub">From a single shingle to a complete build — Gray Exteriors handles every scope of work with the same commitment to quality and craftsmanship.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <span class="service-icon">🏠</span>
+      <div class="service-name">Roofing</div>
+      <p class="service-desc">Expert installation, repair, and replacement for every roofing type. We help you choose the best system for your home and budget.</p>
+      <div class="service-items">
+        <span class="service-tag">Asphalt Shingle</span>
+        <span class="service-tag">Metal Roofing</span>
+        <span class="service-tag">Standing Seam</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🏗️</span>
+      <div class="service-name">Siding</div>
+      <p class="service-desc">Protect and transform your home's exterior with premium siding materials. Beautiful results built to withstand the elements.</p>
+      <div class="service-items">
+        <span class="service-tag">Vinyl</span>
+        <span class="service-tag">Hardie Board</span>
+        <span class="service-tag">Smart Siding</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🌧️</span>
+      <div class="service-name">Gutters</div>
+      <p class="service-desc">Custom-fabricated seamless gutters protect your foundation and landscaping. Properly sized for your roof's drainage needs.</p>
+      <div class="service-items">
+        <span class="service-tag">5" Seamless</span>
+        <span class="service-tag">6" Seamless</span>
+        <span class="service-tag">Guards Available</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🚪</span>
+      <div class="service-name">Doors & Windows</div>
+      <p class="service-desc">Boost curb appeal and energy efficiency with quality door and window installations. Precision fitting for a perfect seal every time.</p>
+      <div class="service-items">
+        <span class="service-tag">Entry Doors</span>
+        <span class="service-tag">Replacement Windows</span>
+        <span class="service-tag">Energy Efficient</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">📐</span>
+      <div class="service-name">Soffit & Fascia</div>
+      <p class="service-desc">Critical components that protect your roofline and attic while finishing off your home's exterior with a clean, polished look.</p>
+      <div class="service-items">
+        <span class="service-tag">Soffit</span>
+        <span class="service-tag">Fascia</span>
+        <span class="service-tag">Ventilation</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🔨</span>
+      <div class="service-name">Remodeling</div>
+      <p class="service-desc">Complete interior and exterior remodeling services. Whether you're updating a room or transforming your entire home, we do it all.</p>
+      <div class="service-items">
+        <span class="service-tag">Interior</span>
+        <span class="service-tag">Exterior</span>
+        <span class="service-tag">Full Renovation</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🏡</span>
+      <div class="service-name">New Construction</div>
+      <p class="service-desc">Need something built from scratch? Whether it's a shed, outbuilding, or a complete structure, we have the skills and experience to get it done.</p>
+      <div class="service-items">
+        <span class="service-tag">Sheds</span>
+        <span class="service-tag">Outbuildings</span>
+        <span class="service-tag">New Builds</span>
+      </div>
+    </div>
+
+    <div class="service-card" style="border: 1px solid rgba(43,126,193,0.2); position:relative;">
+      <span class="service-icon">🔥</span>
+      <div class="service-name">Restoration</div>
+      <p class="service-desc">For fire and flood restoration, we proudly partner with our sister company — Restoration Express. Dedicated specialists, same commitment to quality.</p>
+      <div class="service-items">
+        <span class="service-tag">Fire Damage</span>
+        <span class="service-tag">Flood Damage</span>
+        <span class="service-tag">Insurance Claims</span>
+      </div>
+      <a href="https://restorationexpress.com" target="_blank" rel="noopener" style="display:inline-block; margin-top:1.2rem; font-family:'Barlow Condensed',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(43,126,193,0.4); padding-bottom:2px;">Visit Restoration Express →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="why-grid">
+    <div>
+      <span class="section-tag">Why Gray Exteriors</span>
+      <h2 class="section-title">One Contractor.<br>Every Job.</h2>
+      <div class="accent-line"></div>
+      <div class="why-features">
+        <div class="why-feature">
+          <div class="why-feature-num">01</div>
+          <div class="why-feature-body">
+            <div class="why-feature-title">One Company, Total Coverage</div>
+            <p class="why-feature-desc">Stop juggling multiple contractors. We handle roofing, siding, gutters, remodeling, and complete interior & exterior transformations — all under one roof.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-num">02</div>
+          <div class="why-feature-body">
+            <div class="why-feature-title">Quality You Can See</div>
+            <p class="why-feature-desc">We don't cut corners. Every project — big or small — gets the same attention to detail and pride of workmanship.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-num">03</div>
+          <div class="why-feature-body">
+            <div class="why-feature-title">Licensed, Insured & Transparent</div>
+            <p class="why-feature-desc">Free detailed estimates, clear timelines, and no surprise costs. You'll always know exactly what you're getting before we start.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-num">04</div>
+          <div class="why-feature-body">
+            <div class="why-feature-title">Emergency & Restoration Ready</div>
+            <p class="why-feature-desc">When disaster strikes, we're there fast. We work directly with insurance companies to make the process as smooth as possible.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="why-quote">
+        "We handle everything from a single gutter to a <span>complete custom home.</span>"
+      </div>
+      <ul class="why-services-list">
+        <li>Asphalt Roofing</li>
+        <li>Metal Roofing</li>
+        <li>Standing Seam</li>
+        <li>Vinyl Siding</li>
+        <li>Hardie Board</li>
+        <li>Smart Siding</li>
+        <li>5" & 6" Gutters</li>
+        <li>Soffit & Fascia</li>
+        <li>Doors & Windows</li>
+        <li>Interior Remodel</li>
+        <li>Exterior Remodel</li>
+        <li>Restoration Express</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESTORATION BANNER -->
+<div id="restoration">
+  <div class="restore-text">
+    <div class="restore-label">Emergency Services</div>
+    <h2 class="restore-title">When Disaster Strikes,<br>We're There First</h2>
+    <p class="restore-desc">Gray Exteriors provides immediate emergency response to protect your property — then connects you with our sister company, Restoration Express, for full restoration. We also maintain a close working relationship with a certified arborist for emergency tree removal and property clearing.</p>
+    <div class="restore-types">
+      <span class="restore-chip">🔥 Fire Damage</span>
+      <span class="restore-chip">💧 Flood Damage</span>
+      <span class="restore-chip">🪵 Emergency Tarping</span>
+      <span class="restore-chip">🚪 Board-Ups</span>
+      <span class="restore-chip">🌳 Tree Removal</span>
+      <span class="restore-chip">📋 Insurance Claims</span>
+    </div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+    <a href="tel:7654305731" class="restore-cta">Call for Emergency Help</a>
+    <a href="https://restorationexpress.com" target="_blank" rel="noopener" style="font-family:'Barlow Condensed',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.7); text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:2px;">Full Restoration? Visit Restoration Express →</a>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <span class="section-tag">Our Work</span>
+  <h2 class="section-title">Project Gallery</h2>
+  <div class="accent-line"></div>
+  <p class="section-sub">Browse completed projects from the Gray Exteriors team. Filter by service type to find work relevant to your project.</p>
+
+  <!-- FILTER BUTTONS -->
+  <div class="gallery-filters">
+    <button class="filter-btn active" onclick="filterGallery('all', this)">All Projects</button>
+    <button class="filter-btn" onclick="filterGallery('roofing', this)">Roofing</button>
+    <button class="filter-btn" onclick="filterGallery('siding', this)">Siding</button>
+    <button class="filter-btn" onclick="filterGallery('gutters', this)">Gutters</button>
+    <button class="filter-btn" onclick="filterGallery('remodeling', this)">Remodeling</button>
+    <button class="filter-btn" onclick="filterGallery('windows-doors', this)">Windows & Doors</button>
+  </div>
+
+  <!-- GALLERY GRID -->
+  <div class="gallery-grid" id="galleryGrid">
+
+    <!-- REMODELING — real photos -->
+    <div class="gallery-item featured" data-category="remodeling">
+      <img src="images/Remodeling - 2.jpg" alt="Kitchen remodel with white shaker cabinets and granite countertops" loading="lazy" />
+      <div class="gallery-item-label">Kitchen Remodel</div>
+    </div>
+
+    <div class="gallery-item" data-category="remodeling">
+      <img src="images/Remodeling - 1.jpg" alt="New LVP flooring installation in bedroom" loading="lazy" />
+      <div class="gallery-item-label">New Flooring Installation</div>
+    </div>
+
+    <div class="gallery-item" data-category="remodeling">
+      <img src="images/Remodeling - 3.jpg" alt="Bonus room drywall and framing" loading="lazy" />
+      <div class="gallery-item-label">Bonus Room Build-Out</div>
+    </div>
+
+    <div class="gallery-item" data-category="remodeling">
+      <img src="images/Remodeling - 4.jpg" alt="Framing and R15 fiberglass insulation" loading="lazy" />
+      <div class="gallery-item-label">Framing & Insulation</div>
+    </div>
+
+    <div class="gallery-item" data-category="remodeling">
+      <img src="images/Remodeling - 5.jpg" alt="Interior drywall in progress" loading="lazy" />
+      <div class="gallery-item-label">Interior Drywall</div>
+    </div>
+
+    <!-- GUTTERS — real photo -->
+    <div class="gallery-item" data-category="gutters">
+      <img src="images/Gutters - 1.jpg" alt="Seamless gutter and downspout installation" loading="lazy" />
+      <div class="gallery-item-label">Seamless Gutter Installation</div>
+    </div>
+
+    <!-- PLACEHOLDERS — replace when photos are available -->
+    <div class="gallery-item" data-category="roofing">
+      <div class="gallery-overlay">
+        <div class="gallery-placeholder-text">Asphalt Shingle Roof</div>
+      </div>
+      <div class="gallery-item-label">Asphalt Shingle Replacement</div>
+    </div>
+
+    <div class="gallery-item" data-category="roofing">
+      <div class="gallery-overlay">
+        <div class="gallery-placeholder-text">Metal Roofing</div>
+      </div>
+      <div class="gallery-item-label">Metal Roof Installation</div>
+    </div>
+
+    <div class="gallery-item" data-category="siding">
+      <div class="gallery-overlay">
+        <div class="gallery-placeholder-text">Hardie Board Siding</div>
+      </div>
+      <div class="gallery-item-label">Hardie Board Siding</div>
+    </div>
+
+    <div class="gallery-item" data-category="siding">
+      <div class="gallery-overlay">
+        <div class="gallery-placeholder-text">Vinyl Siding</div>
+      </div>
+      <div class="gallery-item-label">Vinyl Siding Installation</div>
+    </div>
+
+    <div class="gallery-item" data-category="windows-doors">
+      <div class="gallery-overlay">
+        <div class="gallery-placeholder-text">Windows & Doors</div>
+      </div>
+      <div class="gallery-item-label">Window & Door Installation</div>
+    </div>
+
+  </div>
+  <p class="gallery-note">More projects coming soon — <strong><a href="#contact" style="color:var(--accent);text-decoration:none;">contact us</a></strong> to discuss your project.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <span class="section-tag">Customer Reviews</span>
+  <h2 class="section-title">What Our Clients Say</h2>
+  <div class="accent-line"></div>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Gray Exteriors replaced our entire roof after a storm and did an incredible job. They worked with our insurance company and the whole process was seamless. Highly recommend!"</p>
+      <div class="testimonial-author">John & Lisa M.</div>
+      <div class="testimonial-role">Roofing Replacement</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"We had them do new Hardie board siding and gutters on our home. The crew was professional, clean, and finished ahead of schedule. The house looks brand new."</p>
+      <div class="testimonial-author">Tom R.</div>
+      <div class="testimonial-role">Siding & Gutters</div>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"After a house fire, Gray Exteriors handled everything from start to finish. They dealt with the insurance adjusters and restored our home better than it was before."</p>
+      <div class="testimonial-author">The Henderson Family</div>
+      <div class="testimonial-role">Fire Restoration</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div>
+      <span class="section-tag">Get In Touch</span>
+      <h2 class="section-title">Request a<br>Free Quote</h2>
+      <div class="accent-line"></div>
+      <p class="section-sub">Tell us about your project and we'll get back to you with a detailed, no-obligation estimate.</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">(765) 430-5731</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value"><a href="mailto:kyle@grayexteriors.com" style="color:var(--white);text-decoration:none;">kyle@grayexteriors.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Service Area</div>
+            <div class="contact-item-value">Tippecanoe County & Surrounding Areas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-field">
+          <label>First Name</label>
+          <input type="text" name="first_name" placeholder="John" required />
+        </div>
+        <div class="form-field">
+          <label>Last Name</label>
+          <input type="text" name="last_name" placeholder="Smith" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Phone</label>
+          <input type="tel" name="phone" placeholder="(555) 000-0000" />
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="john@email.com" required />
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Service Needed</label>
+        <select name="service">
+          <option value="">Select a service...</option>
+          <option>Roofing – Asphalt Shingle</option>
+          <option>Roofing – Metal</option>
+          <option>Roofing – Standing Seam</option>
+          <option>Siding – Vinyl</option>
+          <option>Siding – Hardie Board</option>
+          <option>Siding – Smart Siding</option>
+          <option>Gutters – 5" Seamless</option>
+          <option>Gutters – 6" Seamless</option>
+          <option>Soffit & Fascia</option>
+          <option>Doors & Windows</option>
+          <option>Interior Remodeling</option>
+          <option>Exterior Remodeling</option>
+          <option>New Construction – Home</option>
+          <option>New Construction – Shed/Outbuilding</option>
+          <option>Fire Restoration</option>
+          <option>Flood Restoration</option>
+          <option>Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Project Details</label>
+        <textarea name="message" placeholder="Tell us a bit about your project — size, timeline, any specific concerns..."></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="formSubmitBtn">Send My Request →</button>
+      <div id="formStatus" style="display:none; padding:1rem; font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:600; letter-spacing:0.05em;"></div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">GRAY <span>EXTERIORS</span></div>
+      <p class="footer-tagline">Full-service roofing, siding, gutters, remodeling, new construction, and restoration. One contractor. Every job done right.</p>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-links-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Roofing</a></li>
+        <li><a href="#services">Siding</a></li>
+        <li><a href="#services">Gutters</a></li>
+        <li><a href="#services">Doors & Windows</a></li>
+        <li><a href="#services">Soffit & Fascia</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-links-title">More Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Remodeling</a></li>
+        <li><a href="#services">New Construction</a></li>
+        <li><a href="https://restorationexpress.com" target="_blank" rel="noopener">Fire Restoration ↗</a></li>
+        <li><a href="https://restorationexpress.com" target="_blank" rel="noopener">Flood Restoration ↗</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-links-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Free Quote</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Gray Exteriors. All rights reserved.</div>
+    <div class="footer-license">Licensed & Insured</div>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = document.getElementById('formSubmitBtn');
+    const status = document.getElementById('formStatus');
+
+    // *** REPLACE THIS URL with your Formspree URL after signing up at formspree.io ***
+    const FORMSPREE_URL = 'https://formspree.io/f/mojkvbev';
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    status.style.display = 'none';
+
+    try {
+      const data = new FormData(form);
+      const response = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.style.color = '#4caf93';
+        status.textContent = '✓ Message sent! We\'ll be in touch shortly.';
+        form.reset();
+        btn.textContent = 'Send My Request →';
+        btn.disabled = false;
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      status.style.color = '#e05555';
+      status.textContent = '✗ Something went wrong. Please call us at (765) 430-5731.';
+      btn.textContent = 'Send My Request →';
+      btn.disabled = false;
+    }
+    status.style.display = 'block';
+  }
+  function filterGallery(category, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const items = document.querySelectorAll('.gallery-item');
+    let firstVisible = true;
+    items.forEach(item => {
+      const match = category === 'all' || item.dataset.category === category;
+      item.classList.toggle('hidden', !match);
+      if (match) {
+        if (firstVisible) {
+          item.classList.add('featured');
+          firstVisible = false;
+        } else {
+          item.classList.remove('featured');
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>
