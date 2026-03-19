@@ -395,6 +395,33 @@
       opacity: 0; transition: opacity 0.3s;
     }
     .gallery-item:hover .gallery-item-label { opacity: 1; }
+    /* ─── LIGHTBOX ─── */
+    #lightbox {
+      display: none;
+      position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.92);
+      align-items: center; justify-content: center;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: 92vw; max-height: 88vh;
+      object-fit: contain;
+      box-shadow: 0 0 60px rgba(0,0,0,0.8);
+      animation: lbIn 0.2s ease;
+    }
+    @keyframes lbIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    #lightbox-close {
+      position: absolute; top: 1.2rem; right: 1.5rem;
+      font-size: 2.2rem; color: var(--white);
+      cursor: pointer; line-height: 1;
+      background: none; border: none;
+      opacity: 0.7; transition: opacity 0.2s;
+    }
+    #lightbox-close:hover { opacity: 1; }
+
     .gallery-placeholder-text {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
@@ -810,7 +837,6 @@
     <button class="filter-btn" onclick="filterGallery('siding', this)">Siding</button>
     <button class="filter-btn" onclick="filterGallery('gutters', this)">Gutters</button>
     <button class="filter-btn" onclick="filterGallery('remodeling', this)">Remodeling</button>
-    <button class="filter-btn" onclick="filterGallery('windows-doors', this)">Windows & Doors</button>
   </div>
 
   <!-- GALLERY GRID -->
@@ -842,47 +868,49 @@
       <div class="gallery-item-label">Interior Drywall</div>
     </div>
 
-    <!-- GUTTERS — real photo -->
+    <!-- GUTTERS — real photos -->
     <div class="gallery-item" data-category="gutters">
       <img src="images/Gutters - 1.jpg" alt="Seamless gutter and downspout installation" loading="lazy" />
       <div class="gallery-item-label">Seamless Gutter Installation</div>
     </div>
 
-    <!-- PLACEHOLDERS — replace when photos are available -->
-    <div class="gallery-item" data-category="roofing">
-      <div class="gallery-overlay">
-        <div class="gallery-placeholder-text">Asphalt Shingle Roof</div>
-      </div>
-      <div class="gallery-item-label">Asphalt Shingle Replacement</div>
+    <div class="gallery-item" data-category="gutters">
+      <img src="images/Gutters - 2.jpg" alt="Gutter installation on home exterior" loading="lazy" />
+      <div class="gallery-item-label">Gutter Installation</div>
     </div>
 
+    <div class="gallery-item" data-category="gutters">
+      <img src="images/Gutter - 3.jpg" alt="Downspout and gutter system" loading="lazy" />
+      <div class="gallery-item-label">Gutter & Downspout System</div>
+    </div>
+
+    <!-- ROOFING — real photo -->
     <div class="gallery-item" data-category="roofing">
-      <div class="gallery-overlay">
-        <div class="gallery-placeholder-text">Metal Roofing</div>
-      </div>
-      <div class="gallery-item-label">Metal Roof Installation</div>
+      <img src="images/Roofing - 1.jpg" alt="Roof replacement project" loading="lazy" />
+      <div class="gallery-item-label">Roof Replacement</div>
+    </div>
+
+    <!-- SIDING / EXTERIOR — real photos -->
+    <div class="gallery-item" data-category="siding">
+      <img src="images/Exterior -1 .jpg" alt="Exterior siding project" loading="lazy" />
+      <div class="gallery-item-label">Exterior Work</div>
     </div>
 
     <div class="gallery-item" data-category="siding">
-      <div class="gallery-overlay">
-        <div class="gallery-placeholder-text">Hardie Board Siding</div>
-      </div>
-      <div class="gallery-item-label">Hardie Board Siding</div>
+      <img src="images/Exterior - 2.jpg" alt="Exterior siding installation" loading="lazy" />
+      <div class="gallery-item-label">Siding Installation</div>
     </div>
 
     <div class="gallery-item" data-category="siding">
-      <div class="gallery-overlay">
-        <div class="gallery-placeholder-text">Vinyl Siding</div>
-      </div>
-      <div class="gallery-item-label">Vinyl Siding Installation</div>
+      <img src="images/Exterior - 3.jpg" alt="Exterior siding and trim" loading="lazy" />
+      <div class="gallery-item-label">Siding & Trim</div>
     </div>
 
-    <div class="gallery-item" data-category="windows-doors">
-      <div class="gallery-overlay">
-        <div class="gallery-placeholder-text">Windows & Doors</div>
-      </div>
-      <div class="gallery-item-label">Window & Door Installation</div>
+    <div class="gallery-item" data-category="siding">
+      <img src="images/Exteriors - 4.jpg" alt="Completed exterior renovation" loading="lazy" />
+      <div class="gallery-item-label">Exterior Renovation</div>
     </div>
+
 
   </div>
   <p class="gallery-note">More projects coming soon — <strong><a href="#contact" style="color:var(--accent);text-decoration:none;">contact us</a></strong> to discuss your project.</p>
@@ -1045,7 +1073,31 @@
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
 <script>
+  function openLightbox(src, alt) {
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-img').alt = alt;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
   function toggleNav() {
     document.getElementById('navLinks').classList.toggle('open');
   }
@@ -1092,6 +1144,13 @@
     }
     status.style.display = 'block';
   }
+  document.querySelectorAll('.gallery-item img').forEach(function(img) {
+    img.parentElement.style.cursor = 'zoom-in';
+    img.parentElement.addEventListener('click', function() {
+      openLightbox(img.src, img.alt);
+    });
+  });
+
   function filterGallery(category, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
